@@ -49,47 +49,47 @@
         </div>
       </div>
       <script>
-      function getTimeRemaining(endtime) {
-      var t = Date.parse(endtime) - Date.parse(new Date());
-      var seconds = Math.floor((t / 1000) % 60);
-      var minutes = Math.floor((t / 1000 / 60) % 60);
-      var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-      var days = Math.floor(t / (1000 * 60 * 60 * 24));
-      return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-      };
-      }
+          function getTimeRemaining(endtime) {
+          var t = Date.parse(endtime) - Date.parse(new Date());
+          var seconds = Math.floor((t / 1000) % 60);
+          var minutes = Math.floor((t / 1000 / 60) % 60);
+          var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+          var days = Math.floor(t / (1000 * 60 * 60 * 24));
+          return {
+          'total': t,
+          'days': days,
+          'hours': hours,
+          'minutes': minutes,
+          'seconds': seconds
+          };
+          }
 
-      function initializeClock(id, endtime) {
-      var clock = document.getElementById(id);
-      var daysSpan = clock.querySelector('.days');
-      var hoursSpan = clock.querySelector('.hours');
-      var minutesSpan = clock.querySelector('.minutes');
-      var secondsSpan = clock.querySelector('.seconds');
+          function initializeClock(id, endtime) {
+          var clock = document.getElementById(id);
+          var daysSpan = clock.querySelector('.days');
+          var hoursSpan = clock.querySelector('.hours');
+          var minutesSpan = clock.querySelector('.minutes');
+          var secondsSpan = clock.querySelector('.seconds');
 
-      function updateClock() {
-      var t = getTimeRemaining(endtime);
+          function updateClock() {
+          var t = getTimeRemaining(endtime);
 
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+          daysSpan.innerHTML = t.days;
+          hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+          minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+          secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-      if (t.total <= 0) {
-      clearInterval(timeinterval);
-      }
-      }
+          if (t.total <= 0) {
+          clearInterval(timeinterval);
+          }
+          }
 
-      updateClock();
-      var timeinterval = setInterval(updateClock, 1000);
-      }
+          updateClock();
+          var timeinterval = setInterval(updateClock, 1000);
+          }
 
-      var deadline = '2019-12-05 09:00:00 GMT+0000';
-      initializeClock('clockdiv', deadline);
+          var deadline = '2019-12-05 09:00:00 GMT+0000';
+          initializeClock('clockdiv', deadline);
       </script>
     </div>
   </div>
@@ -119,7 +119,7 @@
       <h2 class="lh-title f3">Rotherham Housing Developer Summit 2019 &mdash; <span class="ttu">Booking ends 20 November</span></h2>
       <p class="f4">Gathering together developers, housing associations, funders and advisers from across the region, this Rotherham Council event is focused on making connections, tackling the local housing industry challenges and doing business.</p>
       <p class="f5">Taking place on 5th December at New York Stadium in Rotherham, the summit will showcase the innovative work we are doing in Rotherham and new development opportunities being brought to the market.</p>
-      <p class="f5">Chairing the summit will be Jayne Dowle. Jayne lives in Barnsley and writes about property, homes and architecture for a number of national publications including The Times, The Sunday Times, Grand Designs ad House Beautiful. She also writes a twice-weekly social affairs column for The Yorkshire Post and is a regional judge for the Federation of Master Builders' Awards.</p>
+      <p class="f5">Chairing the summit will be Jayne Dowle. Jayne lives in Barnsley and writes about property, homes and architecture for a number of national publications including The Times, The Sunday Times, Grand Designs and House Beautiful. She also writes a twice-weekly social affairs column for The Yorkshire Post and is a regional judge for the Federation of Master Builders' Awards.</p>
       <p><a class="dib bg-blue white no-underline ph3 pv2 hover-bg-success hover-blue" href="https://pre.rotherham.gov.uk/xfp/form/320">Book Now</a></p>
     </div>
     <div class="ph4-l pv3 w-50-l flex items-start justify-center"><img src="https://rothgov.github.io/developer-summit/images/developer-summit-speaker.jpg"></div>
@@ -251,7 +251,7 @@
   <div class="flex flex-column flex-row-l justify-between">
     <div class="ph3 ph5-l mw8 center">
       <p class="f4">Last year's Rotherham Housing Developer Summit held in November 2018 was another great success. The event gave us the opportunity to engage with many of you directly, we were able to discuss future opportunities to work together and make many new business connections.</p>
-      <p class="f5">There was a really buzz in the room as delegates found out about our aspirations for the Town Centre and Bassingthorpe Farm. as well as hearing about the some of the site opportunities in the newly adopted Local Plan and opportunities for new housing across some of our Council owned sites.</p>
+      <p class="f5">There was a real buzz in the room as delegates found out about our aspirations for the Town Centre and Bassingthorpe Farm. as well as hearing about the some of the site opportunities in the newly adopted Local Plan and opportunities for new housing across some of our Council owned sites.</p>
     </div>
   </div>
 </section>
@@ -260,27 +260,27 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js">
   </script>
   <style>
-  .carousel-cell {
-    width: 100%; /* full width */
-    height: 220px; /* height of carousel */
-    margin-right: 10px;
-  }
-
-  @media screen and (min-width: 30em) and (max-width: 60em) {
-  .carousel-cell {
-    width: 100%; /* full width */
-    height: 320px; /* height of carousel */
-    margin-right: 10px;
-  }
-  }
-
-  @media screen and (min-width: 60em) {
-  .carousel-cell {
-    width: 100%; /* full width */
-    height: 540px; /* height of carousel */
-    margin-right: 10px;
-  }
-  }
+      .carousel-cell {
+        width: 100%; /* full width */
+        height: 220px; /* height of carousel */
+        margin-right: 10px;
+      }
+    
+      @media screen and (min-width: 30em) and (max-width: 60em) {
+      .carousel-cell {
+        width: 100%; /* full width */
+        height: 320px; /* height of carousel */
+        margin-right: 10px;
+      }
+      }
+    
+      @media screen and (min-width: 60em) {
+      .carousel-cell {
+        width: 100%; /* full width */
+        height: 540px; /* height of carousel */
+        margin-right: 10px;
+      }
+      }
   </style>
   <div class="main-carousel tc mb5">
     <div class="carousel-cell ph4 ph5-m ph5-l"><img src="https://rothgov.github.io/developer-summit/images/rhds-01.jpg"></div>
@@ -301,18 +301,18 @@
     <div class="carousel-cell ph4 ph5-m ph5-l"><img src="https://rothgov.github.io/developer-summit/images/rhds-16.jpg"></div>
   </div>
   <script>
-    var elem = document.querySelector('.main-carousel');
-  var flkty = new Flickity( elem, {
-    // options
-    cellAlign: 'left',
-    contain: true
-  });
-
-  // element argument can be a selector string
-  //   for an individual element
-  var flkty = new Flickity( '.main-carousel', {
-    // options
-  });
+        var elem = document.querySelector('.main-carousel');
+      var flkty = new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+      });
+    
+      // element argument can be a selector string
+      //   for an individual element
+      var flkty = new Flickity( '.main-carousel', {
+        // options
+      });
   </script>
 </section>
 <section class="bg-blue white">
@@ -377,6 +377,7 @@
         <p>Esh Construction provides civil engineering, commercial build, refurbishment, affordable housing and facilities management services to a range of public and private clients.</p>
         <p>Our company is built on experienced and dedicated people with a passion for delivering quality construction projects.</p>
         <p>We are an award winning, socially responsible contractor committed to supporting the communities in which we work.</p>
+        <p>ESH is the Council's appointed contractor for the Broom Hays development in Broom Valley which will see 44 high quality houses, bungalows and apartments for both rent and shared ownership built on the site of a decommissioned care home.</p>
         <p class="f7">Contact: Alistair Gill<br>
         Head of Business Development and Estimating – Yorkshire and Humber</p>
         <p>Telephone: <a class="link blue hover-blue-l" href="tel:0113%20399%203030">0113 399 3030</a></p>
@@ -387,9 +388,9 @@
       <img alt="Houlton Logo" class="h3 mw-100" src="https://rothgov.github.io/developer-summit/images/Houlton_Logo.png">
       <div class="f7 f6-m f6-l">
         <p>Founded in Hull in 1879, Houlton has been at the forefront of construction, quality and teamwork for over 140 years.</p>
-        <p></p>Through collaborative working and our ability to approach any construction or development project with the range of expertise of our team of professionals.
-        <p></p>
+        <p>Through collaborative working and our ability to approach any construction or development project with the range of expertise of our team of professionals.</p>
         <p>From project managers to apprentices we are committed to quality and excellence at every level and ensures a successful project outcome.</p>
+        <p>Houlton is the Council's appointed contractor for The Bellows development in Rawmarsh. The development is the regeneration of a former derelict shopping centre providing 58 contemporary and stylish affordable houses and apartments for both rent and shared ownership.</p>
         <p class="f7">Contact: John Bayliss<br>
         Business Development Manager</p>
         <p>Email: <a class="link blue hover-blue-l" href="mailto:j.bayliss@houlton.co.uk?Subject=Rotherham%20Developer%20Summit">j.bayliss@houlton.co.uk</a></p>
