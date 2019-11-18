@@ -26,7 +26,7 @@
       </p>
 
       <p class="f6">
-        We are looking to re- schedule the event for in January and will
+        We are looking to re-schedule the event for in January and will
         communicate the new date as soon as this has been determined.
       </p>
 
@@ -39,88 +39,29 @@
 </section>
 <section class="bg-blue white">
   <div class="flex flex-column flex-row-l justify-between">
-    <div class="ph3 ph5-l w-50-l cover tc tl-l" style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-1.jpg) no-repeat center;">
-      <h1 class="lh-title f2 f1-l josefin ttu">Rotherham<br>
-      Housing<br>
-      Developer<br>
-      Summit 2019</h1>
-      <p class="f3">5th December 2019</p>
-      <p><a class="dib bg-white blue no-underline ph3 pv2 hover-bg-success" href="https://www.rotherham.gov.uk/xfp/form/320">Book Now</a></p>
+    <div
+      class="ph3 ph5-l w-50-l cover tc tl-l"
+      style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-1.jpg) no-repeat center;"
+    >
+      <h1 class="lh-title f2 f1-l josefin ttu">
+        Rotherham<br />
+        Housing<br />
+        Developer<br />
+        Summit 2019
+      </h1>
+      <p class="f3">Date to be confirmed.</p>
+      <p>
+        <a
+          class="dib bg-white blue no-underline ph3 pv2 hover-bg-success"
+          href="https://www.rotherham.gov.uk/xfp/form/320"
+          >Book Now</a
+        >
+      </p>
     </div>
-    <div class="ph3 ph5-l w-50-l flex flex-column items-center justify-center cover pv5" style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-2.jpg) no-repeat center;">
-      <div>
-        <h2 class="f3 f2-m f2-l josefin ttu mv0">Countdown</h2>
-      </div>
-      <div class="flex tc" id="clockdiv">
-        <div>
-          <span class="days f2 f1-m f1-l ph3"></span>
-          <div class="smalltext f7">
-            Days
-          </div>
-        </div>
-        <div>
-          <span class="hours f2 f1-m f1-l ph3"></span>
-          <div class="smalltext f7">
-            Hours
-          </div>
-        </div>
-        <div>
-          <span class="minutes f2 f1-m f1-l ph3"></span>
-          <div class="smalltext f7">
-            Minutes
-          </div>
-        </div>
-        <div>
-          <span class="seconds f2 f1-m f1-l ph3"></span>
-          <div class="smalltext f7">
-            Seconds
-          </div>
-        </div>
-      </div>
-      <script>
-          function getTimeRemaining(endtime) {
-          var t = Date.parse(endtime) - Date.parse(new Date());
-          var seconds = Math.floor((t / 1000) % 60);
-          var minutes = Math.floor((t / 1000 / 60) % 60);
-          var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-          var days = Math.floor(t / (1000 * 60 * 60 * 24));
-          return {
-          'total': t,
-          'days': days,
-          'hours': hours,
-          'minutes': minutes,
-          'seconds': seconds
-          };
-          }
-
-          function initializeClock(id, endtime) {
-          var clock = document.getElementById(id);
-          var daysSpan = clock.querySelector('.days');
-          var hoursSpan = clock.querySelector('.hours');
-          var minutesSpan = clock.querySelector('.minutes');
-          var secondsSpan = clock.querySelector('.seconds');
-
-          function updateClock() {
-          var t = getTimeRemaining(endtime);
-
-          daysSpan.innerHTML = t.days;
-          hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-          minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-          secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-          if (t.total <= 0) {
-          clearInterval(timeinterval);
-          }
-          }
-
-          updateClock();
-          var timeinterval = setInterval(updateClock, 1000);
-          }
-
-          var deadline = '2019-12-05 09:00:00 GMT+0000';
-          initializeClock('clockdiv', deadline);
-      </script>
-    </div>
+    <div
+      class="ph3 ph5-l w-50-l flex flex-column items-center justify-center cover pv5"
+      style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-2.jpg) no-repeat center;"
+    ></div>
   </div>
 </section>
 <section class="bg-blue-d">
