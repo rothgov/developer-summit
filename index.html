@@ -8,131 +8,170 @@
   <link href="https://rothgov.github.io/design/css/style.css" rel="stylesheet">
 </head>
 <body class="ma0 pa0 blue muli f4 lh-copy">
-  <section class="bg-warning blue">
+  <section class="bg-blue white">
   <div class="flex flex-column flex-row-l justify-between">
-    <aside class="ph3 ph5-l center">
-      <h2 class="f4 mb1">Event Postponed</h2>
-      <p>
-        Owing to the recent announcement of a General Election on 12 December
-        2019, the Council has taken the difficult decision to defer our Housing
-        Developer Summit which had been planned for 5 December.
-      </p>
-
-      <p class="f6">
-        A key principle of the event is to bring together representatives from
-        across the public and private sector to focus on housing growth, and it
-        is felt that attendance at the event may be affected during the
-        pre-election period.
-      </p>
-
-      <p class="f6">
-        We are looking to re-schedule the event for in January and will
-        communicate the new date as soon as this has been determined.
-      </p>
-
-      <p class="f6">
-        Reservations will be held for those who have already booked onto the
-        event so there will be no need to rebook. Thank you for your patience.
-      </p>
-    </aside>
-  </div>
-</section>
-<section class="bg-blue white">
-  <div class="flex flex-column flex-row-l justify-between">
-    <div
-      class="ph3 ph5-l w-50-l cover tc tl-l"
-      style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-1.jpg) no-repeat center;"
-    >
-      <h1 class="lh-title f2 f1-l josefin ttu">
-        Rotherham<br />
-        Housing<br />
-        Developer<br />
-        Summit 2019
-      </h1>
-      <p class="f3">Date to be confirmed.</p>
-      <p>
-        <a
-          class="dib bg-white blue no-underline ph3 pv2 hover-bg-success"
-          href="https://www.rotherham.gov.uk/xfp/form/320"
-          >Book Now</a
-        >
-      </p>
+    <div class="ph3 ph5-l w-50-l cover tc tl-l" style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-1.jpg) no-repeat center;">
+      <h1 class="lh-title f2 f1-l josefin ttu">Rotherham<br>
+      Housing<br>
+      Developer<br>
+      Summit 2019</h1>
+      <p class="f3">21st January 2020</p>
+      <p><a class="dib bg-white blue no-underline ph3 pv2 hover-bg-success" href="https://www.rotherham.gov.uk/xfp/form/320">Book Now</a></p>
     </div>
-    <div
-      class="ph3 ph5-l w-50-l flex flex-column items-center justify-center cover pv5"
-      style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-2.jpg) no-repeat center;"
-    ></div>
+    <div class="ph3 ph5-l w-50-l flex flex-column items-center justify-center cover pv5" style="background:url(http://rothgov.github.io/developer-summit/images/developer-summit-banner-2.jpg) no-repeat center;">
+      <div>
+        <h2 class="f3 f2-m f2-l josefin ttu mv0">Countdown</h2>
+      </div>
+      <div class="flex tc" id="clockdiv">
+        <div>
+          <span class="days f2 f1-m f1-l ph3"></span>
+          <div class="smalltext f7">
+            Days
+          </div>
+        </div>
+        <div>
+          <span class="hours f2 f1-m f1-l ph3"></span>
+          <div class="smalltext f7">
+            Hours
+          </div>
+        </div>
+        <div>
+          <span class="minutes f2 f1-m f1-l ph3"></span>
+          <div class="smalltext f7">
+            Minutes
+          </div>
+        </div>
+        <div>
+          <span class="seconds f2 f1-m f1-l ph3"></span>
+          <div class="smalltext f7">
+            Seconds
+          </div>
+        </div>
+      </div>
+      <script>
+          function getTimeRemaining(endtime) {
+          var t = Date.parse(endtime) - Date.parse(new Date());
+          var seconds = Math.floor((t / 1000) % 60);
+          var minutes = Math.floor((t / 1000 / 60) % 60);
+          var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+          var days = Math.floor(t / (1000 * 60 * 60 * 24));
+          return {
+          'total': t,
+          'days': days,
+          'hours': hours,
+          'minutes': minutes,
+          'seconds': seconds
+          };
+          }
+
+          function initializeClock(id, endtime) {
+          var clock = document.getElementById(id);
+          var daysSpan = clock.querySelector('.days');
+          var hoursSpan = clock.querySelector('.hours');
+          var minutesSpan = clock.querySelector('.minutes');
+          var secondsSpan = clock.querySelector('.seconds');
+
+          function updateClock() {
+          var t = getTimeRemaining(endtime);
+
+          daysSpan.innerHTML = t.days;
+          hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+          minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+          secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+          if (t.total <= 0) {
+          clearInterval(timeinterval);
+          }
+          }
+
+          updateClock();
+          var timeinterval = setInterval(updateClock, 1000);
+          }
+
+          var deadline = '2020-01-21 09:00:00 GMT+0000';
+          initializeClock('clockdiv', deadline);
+      </script>
+    </div>
   </div>
 </section>
 <section class="bg-blue-d">
   <div class="flex flex-column flex-row-l justify-between f5 tc-l">
     <div class="ph3 w-25-l">
-      <p><a class="link white hover-blue-xl" href="#programme">Event Programme</a></p>
+      <p><a class="b link white hover-blue-xl" href="#programme">Event Programme</a></p>
     </div>
     <div class="ph3 w-25-l">
-      <p><a class="link white hover-blue-xl" href="#exhibition">Exhibition</a></p>
+      <p><a class="b link white hover-blue-xl" href="#exhibition">Exhibition</a></p>
     </div>
     <div class="ph3 w-25-l">
-      <p><a class="link white hover-blue-xl" href="#attend">Who should attend</a></p>
+      <p><a class="b link white hover-blue-xl" href="#attend">Who should attend</a></p>
     </div>
     <div class="ph3 w-25-l">
-      <p><a class="link white hover-blue-xl" href="#last-year">Last year's event and gallery</a></p>
+      <p><a class="b link white hover-blue-xl" href="#last-year">Last year's event and gallery</a></p>
     </div>
     <div class="ph3 w-25-l">
-      <p><a class="link white hover-blue-xl" href="#sponsors">Sponsors</a></p>
+      <p><a class="b link white hover-blue-xl" href="#sponsors">Sponsors</a></p>
     </div>
   </div>
 </section>
 <section class="ph3">
   <div class="flex flex-column flex-row-l justify-between">
     <div class="ph4-l w-50-l">
-      <h2 class="lh-title f3">Rotherham Housing Developer Summit 2019 &mdash; <span class="ttu">Booking ends 20 November</span></h2>
-      <p class="f4">Gathering together developers, housing associations, funders and advisers from across the region, this Rotherham Council event is focused on making connections, tackling the local housing industry challenges and doing business.</p>
-      <p class="f5">Taking place on 5th December at New York Stadium in Rotherham, the summit will showcase the innovative work we are doing in Rotherham and new development opportunities being brought to the market.</p>
-      <p class="f5">Chairing the summit will be Jayne Dowle. Jayne lives in Barnsley and writes about property, homes and architecture for a number of national publications including The Times, The Sunday Times, Grand Designs and House Beautiful. She also writes a twice-weekly social affairs column for The Yorkshire Post and is a regional judge for the Federation of Master Builders' Awards.</p>
+      <h2 class="lh-title f3">Rotherham Housing Developer Summit 2019 &mdash; <span class="ttu">Booking ends 10th January 2020</span></h2>
+      <p class="f4">Gathering together developers, housing associations, funders and advisers from across the region, this event, organised
+      by Rotherham Council, is focused on making connections, tackling the local housing industry challenges and doing business.</p>
+      <p>We are keen to continue to progress our housing growth plans and this year's theme will focus on Accelerating Delivery</p>
+      <p>Taking place on 21st January at New York Stadium in Rotherham, the summit will showcase the innovative work we are doing in Rotherham and new development opportunities being brought to the market.</p>
+      <p>Chairing the summit will be industry expert, well known write and journalist, Jayne Dowle. Jayne lives in Barnsley and writes about property, homes and architecture for a number of national publications including The Times, The Sunday Times, Grand Designs and House Beautiful. She also writes a twice-weekly social affairs column for The Yorkshire Post and is a regional judge for the Federation of Master Builders' Awards.
+</p>
       <p><a class="dib bg-blue white no-underline ph3 pv2 hover-bg-success hover-blue" href="https://www.rotherham.gov.uk/xfp/form/320">Book Now</a></p>
     </div>
     <div class="ph4-l pv3 w-50-l flex items-start justify-center"><img src="https://rothgov.github.io/developer-summit/images/developer-summit-speaker.jpg"></div>
   </div>
 </section>
-<section class="bg-blue white" id="programme">
+<section class="bg-blue white mv0" id="programme">
   <div class="flex flex-column flex-row-l justify-between">
     <div class="ph3 ph5-l center tc">
       <h2 class="lh-title f3">Event Programme</h2>
     </div>
   </div>
 </section>
-<section>
+<section class="bg-cyan-l">
+  <div class="ph3 mw8 center tc">
+    <p class="mv0 pt4 pb2">The summit is the event of the year to find out more about housing and growth in Rotherham.</p>
+  </div>
   <div class="flex flex-column">
-    <div class="ph3 ph5-l mw7 center pt4 pb3">
-      <table align="left" border="1" cellpadding="0" cellspacing="0" class="f5" style="border-collapse:collapse; margin:0px; width:100%">
+    <div class="ph3 ph5-l mw9 center pt2 pb3">
+      <table align="left" border="1" cellpadding="0" cellspacing="0" class="bg-white f5" style="border-collapse:collapse; margin:0px; width:100%">
         <tbody>
           <tr>
             <td class="pa1">9.00am</td>
             <td class="pa1">Registration, refreshments and networking</td>
           </tr>
           <tr>
-            <td class="pa1" colspan="2" style="background: rgb(219, 228, 233);" width="100%">
+            <td class="pa1" colspan="2" style="background: rgb(204, 239, 253);" width="100%">
+              <p align="center" class="f3" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">Conference</span></strong></p>
               <p align="center" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">9.30am &ndash; 12pm</span></strong></p>
-              <p align="center" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">Conference</span></strong></p>
             </td>
           </tr>
           <tr>
             <td class="pa1" colspan="2">
-              <p>The first part of the Summit starts with a welcome address from our Chair Jayne Dowle who writes about property, homes and architecture for a number of national publications.</p>
-              <p>There will then be a number of informative speaker sessions from some of the Council&rsquo;s senior leaders. Finishing with a Q&amp;A session where you will get to ask questions to the key decision makers from the Council about the issues that matter to you the most.</p>
+              <p>We are thrilled to open this year's event by our Chair, industry expert, Jayne Dowle. who writes about property, homes and architecture for a number of national publications.</p>
+             <p>You will hear from a number of informative speakers setting out our latest achievements and ambitious forward programme. The Council's senior leaders and Cabinet Members will update you on our current housing projects and latest initiatives. We are excited to welcome our partners, Homes England and Sheffield City Region, to share their experience of helping to
+              accelerate delivery in Rotherham.</p>
+            <p>There will be a chance in the Q&A session, 'A Conversation with&hellip;', for you to pose your questions and comments to the key decision makers from the Council about the issues that matter to you the most.</p>
             </td>
           </tr>
           <tr>
-            <td class="pa1" colspan="2" style="background: rgb(219, 228, 233);">
+            <td class="pa1" colspan="2" style="background: rgb(204, 239, 253);">
+              <p align="center" class="f3" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">Marketplace and Exhibition</span></strong><span style="color:black; margin:0px"></span></p>
               <p align="center" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">12pm &ndash; 1.30pm (lunch served at 12.45pm)</span></strong><span style="color:black; margin:0px"></span></p>
-              <p align="center" style="margin: 0px; text-align: center;"><strong><span style="color:black; margin:0px">Marketplace and Exhibition</span></strong><span style="color:black; margin:0px"></span></p>
             </td>
           </tr>
           <tr>
             <td class="pa1" colspan="2">
-              <p>In the second part of the Summit you will have time to network and access our marketplace and exhibition area where you will get to speak to various Council departments and partners as well as see upcoming opportunities.</p>
-              <p>There will also be a dedicated meeting place for you to make those connections and do business.</p>
+              <p>We are excited that this year's housing developer summit will feature a marketplace and exhibition showcasing a range of housing related public services.</p>
+             <p>You will have early access to numerous upcoming opportunities, expert advice and a chance to connect with a wide range of people from across the industry.</p>
+            <p>We hope you will benefit from this networking opportunity so we have arranged a dedicated meeting area for you to make new connections and discuss new business leads&hellip; and if that’s not enough to 'whet your appetite' we are providing a mouth-watering lunch.</p>
             </td>
           </tr>
           <tr>
@@ -143,7 +182,6 @@
       </table>
     </div>
     <div class="ph3 mw8 center tc">
-      <p>The summit is the event of the year to find out more about housing and growth in Rotherham.</p>
       <p><a class="dib bg-blue white no-underline ph3 pv2 hover-bg-success hover-blue" href="https://www.rotherham.gov.uk/xfp/form/320">Book Now</a></p>
     </div>
   </div>
@@ -163,7 +201,7 @@
   </div>
   <div class="ph3 ph5-l pb3">
     <p class="f3">We are keen to continue to progress our housing growth plans and this year's event will focus on Accelerating Delivery.</p>
-    <p>As an attendee, you will have exclusive access to our marketplace and exhibition area where you will get speak to other Council departments such as Planning and Affordable Housing for support and help as well as have early access to opportunities. There will also be a dedicated meeting place for you to make those connections and do business.</p>
+    <p>As an attendee, you will have exclusive access to our marketplace and exhibition area where you will get speak to Council departments such as Planning, Procurement, Housing intelligence and Affordable Housing for support and help. You will also have early access to upcoming opportunities and the chance to discuss these with Council colleagues from Asset Management and Strategic Housing and Development.</p>
   </div>
 </section>
 <section class="bg-blue white" id="attend">
